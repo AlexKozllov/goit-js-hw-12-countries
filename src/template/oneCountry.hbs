@@ -1,14 +1,17 @@
 {{#each this}}
 <p class="counrtyName">{{name}}</p>
-<li class="capital">capital: <span class="capitalValue">{{capital}}</span></li>
-<li class="population">population: <span class="populationValue">{{population}}</span></li>
-<li class="languages">languages:
-    <ul class="languageList"> {{#each languages}}
+<div class="data">
+    <ul class="dataList">
+        <li class="dataItem">Capital: <span class="value">{{capital}}</span></li>
+        <li class="dataItem">Population: <span class="value">{{population}}</span></li>
+        <li class="dataItem">Languages:
+            <ul class="languageList value"> {{#each languages}}
 
-        <li class="lenguage">{{this.name}}</li>
-        {{/each }}
+                <li class="lenguage">{{this.name}}</li>
+                {{/each }}
+            </ul>
+        </li>
     </ul>
-</li>
-</ul>
-<img src="{{flag}}" alt="" class="flag">
+    <img src="{{flag}}" alt="" class="flag">
+</div>
 {{/each}}

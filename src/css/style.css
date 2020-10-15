@@ -1,3 +1,7 @@
+body {
+  background: rgb(255 247 211);
+  padding: 0;
+}
 .container {
   text-align: center;
   margin-top: 2rem;
@@ -5,6 +9,60 @@
 }
 
 .notificationFont {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 700;
+}
+
+.inputArea {
+  display: block;
+  margin: 45px auto;
+  margin-top: 70px;
+  width: 350px;
+  height: 25px;
+  font-size: 30px;
+}
+.counrtyName {
+  display: block;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.flag {
+  width: 600px;
+}
+.data {
+  width: 930px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dataList {
+  font-size: 25px;
+  list-style: none;
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+.dataItem {
+  margin-bottom: 20px;
+}
+
+.value {
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.languageList {
+  margin-left: 120px;
+}
+
+.counryItems {
+  width: 250px;
+  margin: 20px auto;
+  font-size: 30px;
 }
