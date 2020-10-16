@@ -45,7 +45,6 @@ function getData(name) {
   let url = `${baseUrl}${name}`;
   fetch(url)
     .then((response) => {
-
       if (response.ok) {
         return response.json()
       }
