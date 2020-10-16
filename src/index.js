@@ -19,6 +19,15 @@ function notification() {
   });
 }
 
+function countryNotFound() {
+  error({
+    title: "ATTENTION",
+    text: "Country not found",
+    addClass: "notificationFont",
+    delay: 3000,
+  });
+}
+
 let baseUrl = `https://restcountries.eu/rest/v2/name/`;
 
 searchInput.addEventListener(
@@ -29,12 +38,23 @@ searchInput.addEventListener(
 );
 
 function getData(name) {
+  if (!name) {
+    resetInput(foundСountries)
+    return
+  }
   let url = `${baseUrl}${name}`;
   fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+
+      if (response.ok) {
+        return response.json()
+      }
+      throw new Error('Error fetching data')
+    })
     .then((data) => {
       markupSelection(data);
-    });
+    })
+    .catch(() => { countryNotFound() });
 }
 
 function markupSelection(data) {
@@ -50,6 +70,10 @@ function markupSelection(data) {
 function insertCountriesList(data, place) {
   const countryItem = countryList(data);
   place.innerHTML = countryItem;
+}
+
+function resetInput(place) {
+  place.innerHTML = ''
 }
 
 function insertAloneCountries(data, place) {
